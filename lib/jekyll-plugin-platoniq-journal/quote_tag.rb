@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require "byebug"
-
 module Jekyll
   class QuoteBlockTag < Liquid::Block
     include JekyllPluginPlatoniqJournal::Base
@@ -17,7 +15,7 @@ module Jekyll
       @context = context
       @site = site
 
-      @site.inclusions[icon_file_path] ||= locate_include_file(icon_file_path)
+      @site.inclusions[include_file_path] ||= locate_include_file(include_file_path)
 
       add_include_to_dependency(inclusion, context) if site.config["incremental"]
       icon = nil
@@ -35,12 +33,12 @@ module Jekyll
       @jdata ||= JSON.parse(@input) if !@input.nil? && !@input.empty?
     end
 
-    def icon_file_path
-      @icon_file_path ||= if !jdata.nil? && jdata["icon"]
-                            jdata["icon"]
-                          else
-                            "svg/icon-quote.liquid"
-                          end
+    def include_file_path
+      @include_file_path ||= if !jdata.nil? && jdata["icon"]
+                               jdata["icon"]
+                             else
+                               "svg/icon-quote.liquid"
+                             end
     end
 
     def quote(text, icon)

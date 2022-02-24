@@ -14,7 +14,7 @@ module Jekyll
       @context = context
       @site = site
 
-      @site.inclusions[icon_file_path] ||= locate_include_file(icon_file_path)
+      @site.inclusions[include_file_path] ||= locate_include_file(include_file_path)
 
       add_include_to_dependency(inclusion, context) if site.config["incremental"]
 
@@ -36,12 +36,12 @@ module Jekyll
                  end
     end
 
-    def icon_file_path
-      @icon_file_path ||= if !jdata.nil? && jdata["icon"]
-                            jdata["icon"]
-                          else
-                            "svg/icon-arrow_leftup.liquid"
-                          end
+    def include_file_path
+      @include_file_path ||= if !jdata.nil? && jdata["icon"]
+                               jdata["icon"]
+                             else
+                               "svg/icon-arrow_leftup.liquid"
+                             end
     end
 
     def render_all
