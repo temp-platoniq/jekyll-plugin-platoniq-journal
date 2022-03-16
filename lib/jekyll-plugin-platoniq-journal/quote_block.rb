@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module Jekyll
-  class QuoteBlockTag < Liquid::Block
+  class QuoteBlock < Liquid::Block
     include JekyllPluginPlatoniqJournal::Base
     include JekyllPluginPlatoniqJournal::IncludesFile
 
-    def initialize(tag_name, input, tokens)
+    def initialize(block_name, input, tokens)
       super
       @input = input
     end
@@ -52,13 +52,16 @@ module Jekyll
     end
 
     def author
-      if !jdata.nil? && jdata["author"]
-        @author ||= <<~AUTHOR
-          <figcaption class="pj-quote-author">
-            #{localize("authored_by")} #{jdata["author"]}
-          </figcaption>
-        AUTHOR
-      end
+      return if jdata.nil?
+
+      author_name = jdata["author"]
+      return if author_name.nil? || author_name == ""
+
+      @author ||= <<~AUTHOR
+        <figcaption class="pj-quote-author">
+          #{localize("authored_by")} #{author_name}
+        </figcaption>
+      AUTHOR
     end
 
     def output(text, icon)
@@ -72,4 +75,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag("quote", Jekyll::QuoteBlockTag)
+Liquid::Template.register_tag("quote", Jekyll::QuoteBlock)
