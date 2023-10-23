@@ -17,6 +17,7 @@ require "jekyll-plugin-platoniq-journal/questions_tag"
 require "jekyll-plugin-platoniq-journal/quote_block"
 require "jekyll-plugin-platoniq-journal/stickers_tag"
 require "jekyll-plugin-platoniq-journal/video_tag"
+require "jekyll-plugin-platoniq-journal/image_tag"
 
 module JekyllPluginPlatoniqJournal
 end
