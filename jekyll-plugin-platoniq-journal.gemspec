@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/Platoniq/jekyll-plugin-platoniq-journal"
   spec.license       = "AGPL-3.0"
 
-  spec.files         = `git ls-files lib`.split("\n").concat(%w(LICENSE.txt README.md))
+  spec.files         = `git ls-files lib`.split("\n").push("LICENSE.txt", "README.md")
 
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 2.5"

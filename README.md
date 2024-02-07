@@ -14,6 +14,7 @@ A collection of plugins for Jekyll:
 - Quote Block
 - Stickers Tag
 - Video Tag
+- Image Tag
 
 ## Installation
 
