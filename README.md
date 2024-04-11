@@ -15,7 +15,7 @@ A collection of plugins for Jekyll:
 - Stickers Tag
 - Video Tag
 - Image Tag
-- Statistics Tag
+- Metrics Tag
 
 ## Installation
 
