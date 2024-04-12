@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-plugin-platoniq-journal"
-  spec.version       = "0.0.22"
+  spec.version       = "0.0.23"
   spec.authors       = ["Agustí B.R."]
   spec.email         = ["agusti@platoniq.net"]
 
@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files lib`.split("\n").push("LICENSE.txt", "README.md")
 
   spec.require_paths = ["lib"]
-  spec.required_ruby_version = ">= 2.5"
+  spec.required_ruby_version = ">= 3.2.0"
 
   spec.add_dependency "jekyll", "~> 4.2"
   spec.add_dependency "kramdown", "~> 2.3"
